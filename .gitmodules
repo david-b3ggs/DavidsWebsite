@@ -1,0 +1,3 @@
+[submodule "food-truck-finder-group2-frontend"]
+	path = food-truck-finder-group2-frontend
+	url = https://gitlab.com/fall19-group2/food-truck-finder-group2-frontend.git
