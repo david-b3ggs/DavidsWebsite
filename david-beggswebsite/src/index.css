@@ -1,5 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Josefin";
+  background-color: #2e2e2e;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-image: url("\\background.jpg");
+  background-position: top;
+  background-size: contain;
+ background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+
+@font-face {
+    font-family: "Josefin";
+    src: url(Abel-Regular.ttf);
 }
