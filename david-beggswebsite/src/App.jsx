@@ -7,11 +7,13 @@ import BuildIcon from '@material-ui/icons/Build';
 import WorkIcon from '@material-ui/icons/Work';
 import DescriptionIcon from '@material-ui/icons/Description';
 import CallIcon from '@material-ui/icons/Call';
-import {Typography, Grid, Button, AppBar, ToolBar, Paper, IconButton, Box, Tooltip} from '@material-ui/core';
+import {Typography, Grid, Button, AppBar, ToolBar, Paper, IconButton, Box, Tooltip, Fade} from '@material-ui/core';
 import {BrowserRouter as Navlink} from 'react-router-dom';
-import Img from 'react-image'
+import Img from 'react-image';
+import logo from './BU.png';
 import PersonIcon from '@material-ui/icons/Person';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import VizSensor from 'react-visibility-sensor';
 import './App.css';
 
 
@@ -41,17 +43,33 @@ const HtmlTooltip = withStyles(theme => ({
 
 class App extends React.Component {
 
+  constructor(){
+    super();
+    this.state = {
+      imgViz: true,
+      showSmall: false
+    };
+  }
+
+  switcher = (isVisible) => {
+    this.setState({imgViz: isVisible, showSmall: !isVisible});
+    console.log("Setting visible to: ", this.state.imgViz);
+    this.state.showSmall = !this.state.imgViz;
+    console.log("Small is now: ", this.state.showSmall);
+  }
+
   render() {
     return (
-      <div style={{fontFamily: "Josefin"}}>
-
+      <div style={{fontFamily: "Josefin"}} id="home">
         <Grid container direction="column" justify="flex-start" align-items="center">
-        <AppBar position="fixed" style={{backgroundColor: "rgba(0, 0, 0, 0)", boxShadow: "none"}}>
+        <AppBar position="fixed" style={{backgroundColor: "#154734", boxShadow: "none"}}>
         <Grid container item direction="row" justify="flex-start" alignItems="center">
           <Grid item style={{marginLeft: "7%"}}>
+          <Button href="/#home" class="text">
           <Typography variant="h1" class="text" style={{color: "white"}}>
             David Beggs
           </Typography>
+          </Button>
           </Grid>
           <Grid item>
             <IconButton style={{color: "#0077b5"}}>
@@ -62,26 +80,66 @@ class App extends React.Component {
             </IconButton>
 
           </Grid>
+
+          <Grid item>
+          <img src={logo}
+          style={{height: "50px", width: "50px", position: "fixed", margin: "0 0", top: "2%", left: "2%"}}/>
+
+            <Fade in={this.state.imgViz}>
+              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "3.5%", left: "45%"}} class="text"> Welcome! </Typography>
+            </Fade>
+
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
+            <PersonIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
+            <WorkIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
+            <SchoolIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
+            <BuildIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
+            <CallIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          </Grid>
+
           <Grid item style={{ float: "right", margin: "0 auto", position: "absolute", right: "7%"}}>
             <Button variant="contained">
             Resume
             <DescriptionIcon />
             </Button>
           </Grid>
+
         </Grid>
+
         </AppBar>
 
         <Grid item style={{marginTop: "12%", marginLeft: "4%"}}>
 
+        <VizSensor onChange={this.switcher}>
         <HtmlTooltip title={
           <React.Fragment>
             <Typography class="text" color="inherit" variant="h2">About</Typography>
           </React.Fragment>
         } placement="top">
-          <IconButton style={{margin: "auto", marginTop: "10%"}} href="/#first" on>
+          <IconButton style={{margin: "auto", marginTop: "10%"}} href="/#first">
             <PersonIcon style={{ height: "220px", width: "220px", color: "white"}}/>
           </IconButton>
           </HtmlTooltip>
+          </VizSensor>
 
           <HtmlTooltip title={
             <React.Fragment>
