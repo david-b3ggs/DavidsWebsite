@@ -6,8 +6,7 @@ import BuildIcon from '@material-ui/icons/Build';
 import WorkIcon from '@material-ui/icons/Work';
 import DescriptionIcon from '@material-ui/icons/Description';
 import CallIcon from '@material-ui/icons/Call';
-import {Typography, Grid, Button, AppBar, ToolBar, Paper, IconButton, Box, Tooltip, Fade} from '@material-ui/core';
-import {BrowserRouter as Navlink} from 'react-router-dom';
+import {Typography, Grid, Button, AppBar, Paper, IconButton, Tooltip, Fade} from '@material-ui/core';
 import Img from 'react-image';
 import logo from './BU.png';
 import face from './Face.jpg';
@@ -15,7 +14,6 @@ import PersonIcon from '@material-ui/icons/Person';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import VizSensor from 'react-visibility-sensor';
 import './App.css';
-import {SpeedDialAction, SpeedDialIcon, SpeedDial} from '@material-ui/lab';
 
 
 const useStylesBootstrap = makeStyles(theme => ({
@@ -26,14 +24,6 @@ const useStylesBootstrap = makeStyles(theme => ({
     backgroundColor: theme.palette.common.black,
   },
 }));
-
-const actions = [
-  { icon: <PersonIcon />, name: 'About' },
-  { icon: <WorkIcon />, name: 'Experience' },
-  { icon: <SchoolIcon />, name: 'Education' },
-  { icon: <BuildIcon />, name: 'Projects' },
-  { icon: <CallIcon />, name: 'Contact' },
-];
 
 function BootstrapTooltip(props) {
   const classes = useStylesBootstrap();
@@ -103,8 +93,6 @@ class App extends React.Component {
           <Grid item>
           <img src={logo}
           style={{height: "50px", width: "50px", position: "fixed", margin: "0 0", top: "2%", left: "2%"}}/>
-
-              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "2%", left: "45%"}} class="text"> Welcome! </Typography>
           
           </Grid>
 
@@ -116,7 +104,7 @@ class App extends React.Component {
           </Grid>
 
           <Fade in={this.state.imgViz}>
-              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "2%", left: "45%"}} class="text"> Welcome! </Typography>
+              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "3%", left: "45%"}} class="text"> Welcome! </Typography>
             </Fade>
           <Fade in={this.state.showSmall}>
           <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
