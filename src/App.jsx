@@ -177,7 +177,7 @@ class App extends React.Component {
             </React.Fragment>
           } placement="top">
           <IconButton style={{margin: "auto", marginTop: "10%"}} >
-            <CallIcon style={{height: "220px", width: "220px", color: "white"}}/>
+            <CallIcon style={{height: "221px", width: "220px", color: "white"}}/>
           </IconButton>
           </HtmlTooltip>
 
