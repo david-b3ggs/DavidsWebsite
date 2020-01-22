@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Avatar from 'react-avatar';
+import React from 'react'; 
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import SchoolIcon from '@material-ui/icons/School';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -11,10 +10,12 @@ import {Typography, Grid, Button, AppBar, ToolBar, Paper, IconButton, Box, Toolt
 import {BrowserRouter as Navlink} from 'react-router-dom';
 import Img from 'react-image';
 import logo from './BU.png';
+import face from './Face.jpg';
 import PersonIcon from '@material-ui/icons/Person';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import VizSensor from 'react-visibility-sensor';
 import './App.css';
+import {SpeedDialAction, SpeedDialIcon, SpeedDial} from '@material-ui/lab';
 
 
 const useStylesBootstrap = makeStyles(theme => ({
@@ -25,6 +26,14 @@ const useStylesBootstrap = makeStyles(theme => ({
     backgroundColor: theme.palette.common.black,
   },
 }));
+
+const actions = [
+  { icon: <PersonIcon />, name: 'About' },
+  { icon: <WorkIcon />, name: 'Experience' },
+  { icon: <SchoolIcon />, name: 'Education' },
+  { icon: <BuildIcon />, name: 'Projects' },
+  { icon: <CallIcon />, name: 'Contact' },
+];
 
 function BootstrapTooltip(props) {
   const classes = useStylesBootstrap();
@@ -47,8 +56,17 @@ class App extends React.Component {
     super();
     this.state = {
       imgViz: true,
-      showSmall: false
+      showSmall: false,
+      open: false,
     };
+  }
+
+  handleClose = () => {
+    this.setState({open: false});
+  }
+
+  handleOpen = () => {
+    this.setState({open: true});
   }
 
   switcher = (isVisible) => {
@@ -59,9 +77,11 @@ class App extends React.Component {
   }
 
   render() {
+    const { active } = this.state;
     return (
       <div style={{fontFamily: "Josefin"}} id="home">
-        <Grid container direction="column" justify="flex-start" align-items="center">
+        <Grid container direction="column" justify="center" alignItems="center">
+
         <AppBar position="fixed" style={{backgroundColor: "#154734", boxShadow: "none"}}>
         <Grid container item direction="row" justify="flex-start" alignItems="center">
           <Grid item style={{marginLeft: "7%"}}>
@@ -72,48 +92,20 @@ class App extends React.Component {
           </Button>
           </Grid>
           <Grid item>
-            <IconButton style={{color: "#0077b5"}}>
+            <IconButton style={{color: "#0077b5"}} href="https://www.linkedin.com/in/david-beggs-v-337004180/" target="_blank">
               <LinkedInIcon />
             </IconButton>
-            <IconButton style={{color: "black"}}>
+            <IconButton style={{color: "black"}} href="https://github.com/david-b3ggs" target="_blank">
               <GitHubIcon />
             </IconButton>
-
           </Grid>
 
           <Grid item>
           <img src={logo}
           style={{height: "50px", width: "50px", position: "fixed", margin: "0 0", top: "2%", left: "2%"}}/>
 
-            <Fade in={this.state.imgViz}>
-              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "3.5%", left: "45%"}} class="text"> Welcome! </Typography>
-            </Fade>
-
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
-            <PersonIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
-            <WorkIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
-            <SchoolIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
-            <BuildIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{left: "45%"}}>
-            <CallIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
+              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "2%", left: "45%"}} class="text"> Welcome! </Typography>
+          
           </Grid>
 
           <Grid item style={{ float: "right", margin: "0 auto", position: "absolute", right: "7%"}}>
@@ -123,11 +115,40 @@ class App extends React.Component {
             </Button>
           </Grid>
 
+          <Fade in={this.state.imgViz}>
+              <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "2%", left: "45%"}} class="text"> Welcome! </Typography>
+            </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
+            <PersonIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{ margin: "0 0"}}>
+            <WorkIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
+            <SchoolIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{ margin: "0 0"}}>
+            <BuildIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+          <Fade in={this.state.showSmall}>
+          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
+            <CallIcon style={{color: "white", height: "50px", width: "50px"}}/>
+          </IconButton>
+          </Fade>
+
         </Grid>
 
         </AppBar>
 
-        <Grid item style={{marginTop: "12%", marginLeft: "4%"}}>
+        <Grid item style={{marginTop: "12%"}}>
 
         <VizSensor onChange={this.switcher}>
         <HtmlTooltip title={
@@ -140,7 +161,6 @@ class App extends React.Component {
           </IconButton>
           </HtmlTooltip>
           </VizSensor>
-
           <HtmlTooltip title={
             <React.Fragment>
               <Typography class="text" color="inherit" variant="h2">Work Experience</Typography>
@@ -180,13 +200,40 @@ class App extends React.Component {
             <CallIcon style={{height: "220px", width: "220px", color: "white"}}/>
           </IconButton>
           </HtmlTooltip>
+          
 
         </Grid>
       </Grid>
 
-      <Paper style={{marginTop: "25%", marginLeft: "7%", width: "85%", backgroundColor: "cream", height: "75vh"}} id="first">
-          <Img src="https://media-exp2.licdn.com/dms/image/C4E03AQErniDKt2pmaw/profile-displayphoto-shrink_200_200/0?e=1584576000&v=beta&t=QIzPmgD66NnkfWp24Zmo3hTMP0gk2qupAMFrTIRlhIM" />
+      <Paper style={{marginTop: "25%", marginLeft: "7%", width: "85%", height: "75vh"}} id="first">
+        <Grid container direction="row" justify="flex-start" alignItems="flex-start"> 
+        <Grid item> 
+        <Img style={{height: "38vh", width: "20vw", marginLeft: "10%", marginTop: "7%"}}
+           alt="David Beggs" src={face} />
+        </Grid>
+        <Grid item>
+          <Typography class="text" style={{fontSize: "25px", marginTop: "5%", marginLeft: "10%", width: "55vw", height: "30vh"}}>
+             My name is David Beggs and I am an aspiring software engineer and innovator from Waco, Texas. I am 
+             currently working toward a BSCS at Baylor University in Computer Science. Outside of the acedemic year I can 
+             be found reading, gaming, running, or taking on projects way over my head. 
+              <br />
+              <br />
+             My professional interests include: machine learning and analysis, quantum algorithm development, 
+              API development, and algorithm optimization.
+          </Typography>
+          </Grid>
+
+          <Grid>
+            <Typography class="text" style={{fontSize: "25px", marginLeft: "6%", width: "80vw", height: "30vh"}}>
+              Here is a few of my favorite books for those curious: 
+            </Typography>
+            
+          </Grid>
+        </Grid>
       </Paper>
+
+      
+      
       </div>
     );
   }
