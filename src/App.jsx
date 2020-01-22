@@ -6,7 +6,7 @@ import BuildIcon from '@material-ui/icons/Build';
 import WorkIcon from '@material-ui/icons/Work';
 import DescriptionIcon from '@material-ui/icons/Description';
 import CallIcon from '@material-ui/icons/Call';
-import {Typography, Grid, Button, AppBar, Paper, IconButton, Tooltip, Fade} from '@material-ui/core';
+import {Typography,Box, Grid, Button, AppBar, Paper, IconButton, Tooltip, Fade} from '@material-ui/core';
 import Img from 'react-image';
 import logo from './BU.png';
 import face from './Face.jpg';
@@ -193,14 +193,14 @@ class App extends React.Component {
         </Grid>
       </Grid>
 
-      <Paper style={{marginTop: "25%", marginLeft: "7%", width: "85%", height: "75vh"}} id="first">
+      <Paper style={{marginTop: "25%", marginLeft: "12%", width: "75vw", height: "75vh"}} id="first">
         <Grid container direction="row" justify="flex-start" alignItems="flex-start"> 
         <Grid item> 
         <Img style={{height: "38vh", width: "20vw", marginLeft: "10%", marginTop: "7%"}}
            alt="David Beggs" src={face} />
         </Grid>
         <Grid item>
-          <Typography class="text" style={{fontSize: "25px", marginTop: "5%", marginLeft: "10%", width: "55vw", height: "30vh"}}>
+          <Typography class="text" style={{fontSize: "25px", marginTop: "5%", marginLeft: "10%", width: "50vw", height: "30vh"}}>
              My name is David Beggs and I am an aspiring software engineer and innovator from Waco, Texas. I am 
              currently working toward a BSCS at Baylor University in Computer Science. Outside of the acedemic year I can 
              be found reading, gaming, running, or taking on projects way over my head. 
@@ -211,13 +211,34 @@ class App extends React.Component {
           </Typography>
           </Grid>
 
-          <Grid>
-            <Typography class="text" style={{fontSize: "25px", marginLeft: "6%", width: "80vw", height: "30vh"}}>
+          <Grid item>
+            <Typography class="text" style={{fontSize: "25px", marginLeft: "6%", width: "80vw", height: "6vh"}}>
               Here is a few of my favorite books for those curious: 
             </Typography>
-            
           </Grid>
         </Grid>
+        <Grid style={{top: "0"}} container direction="row" justify="center" alignItems="center" spacing={3}>
+            <Grid item style={{top: "0"}}>
+            <Box class="box" style={{color: "#154734", backgroundImage: "url(\"https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg\")", backgroundSize: "cover"}}>
+            </Box>
+            </Grid>
+            <Grid item>
+            <Box class="box" style={{color: "#154734", backgroundImage: "url(\"https://images-na.ssl-images-amazon.com/images/I/91EO18pneWL.jpg\")", backgroundSize: "cover"}}>
+            </Box>
+            </Grid>
+            <Grid item>
+            <Box class="box" style={{color: "#154734", backgroundImage: "url(\"https://images-na.ssl-images-amazon.com/images/I/71KkAKYWcuL.jpg\")", backgroundSize: "cover"}}>
+            </Box>
+            </Grid>
+            <Grid item>
+            <Box class="box" style={{color: "#154734", backgroundImage: "url(\"https://images-na.ssl-images-amazon.com/images/I/81ZNpvxzrzL.jpg\")", backgroundSize: "cover"}}>
+            </Box>
+            </Grid>
+            <Grid item>
+            <Box class="box" style={{color: "#154734", backgroundImage: "url(\"https://static1.koorong.com/images/p/08/zdv/d/0060628391@2x.jpg\")", backgroundSize: "cover"}}>
+            </Box>
+            </Grid>
+          </Grid>
       </Paper>
 
       
