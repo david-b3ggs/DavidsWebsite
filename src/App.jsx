@@ -14,6 +14,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import VizSensor from 'react-visibility-sensor';
 import './App.css';
+import VerticalMenu from './verticleMenu';
 
 
 const useStylesBootstrap = makeStyles(theme => ({
@@ -72,11 +73,12 @@ class App extends React.Component {
       <div style={{fontFamily: "Josefin"}} id="home">
         <Grid container direction="column" justify="center" alignItems="center">
 
-        <AppBar position="fixed" style={{backgroundColor: "#154734", boxShadow: "none"}}>
+        <AppBar position="fixed" style={{backgroundColor: "rgba(21,71,52, 0)", boxShadow: "none"}}>
         <Grid container item direction="row" justify="flex-start" alignItems="center">
           <Grid item style={{marginLeft: "7%"}}>
           <Button href="/#home" class="text">
-          <Typography variant="h1" class="text" style={{color: "white"}}>
+          <Typography variant="h1" class="text" style={{color: "white", 
+            textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000"}}>
             David Beggs
           </Typography>
           </Button>
@@ -93,7 +95,6 @@ class App extends React.Component {
           <Grid item>
           <img src={logo}
           style={{height: "50px", width: "50px", position: "fixed", margin: "0 0", top: "2%", left: "2%"}}/>
-          
           </Grid>
 
           <Grid item style={{ float: "right", margin: "0 auto", position: "absolute", right: "7%"}}>
@@ -105,34 +106,13 @@ class App extends React.Component {
 
           <Fade in={this.state.imgViz}>
               <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "3%", left: "45%"}} class="text"> Welcome! </Typography>
-            </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
-            <PersonIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{ margin: "0 0"}}>
-            <WorkIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
-            <SchoolIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{ margin: "0 0"}}>
-            <BuildIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
-          </Fade>
-          <Fade in={this.state.showSmall}>
-          <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
-            <CallIcon style={{color: "white", height: "50px", width: "50px"}}/>
-          </IconButton>
           </Fade>
 
         </Grid>
+
+        <Fade in={this.state.showSmall}>
+            <VerticalMenu fade={this.state.showSmall}/>
+        </Fade>
 
         </AppBar>
 
@@ -154,7 +134,7 @@ class App extends React.Component {
               <Typography class="text" color="inherit" variant="h2">Work Experience</Typography>
             </React.Fragment>
           } placement="top">
-          <IconButton style={{margin: "auto", marginTop: "10%"}} >
+          <IconButton style={{margin: "auto", marginTop: "10%"}} href="/#work">
             <WorkIcon style={{height: "220px", width: "220px", color: "white"}}/>
           </IconButton>
           </HtmlTooltip>
@@ -188,8 +168,6 @@ class App extends React.Component {
             <CallIcon style={{height: "221px", width: "220px", color: "white"}}/>
           </IconButton>
           </HtmlTooltip>
-          
-
         </Grid>
       </Grid>
 
@@ -240,7 +218,17 @@ class App extends React.Component {
             </Grid>
           </Grid>
       </Paper>
+      
+      <Paper id="work" style={{marginTop: "10vh", marginLeft: "12%", width: "75vw", height: "75vh"}}>
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item>
+            <Typography variant="h1" class="text" style={{fontSize: "50px"}}>
+              Work Experience
+            </Typography>
 
+            </Grid>
+          </Grid>
+      </Paper>
       
       
       </div>
