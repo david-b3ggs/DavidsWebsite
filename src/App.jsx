@@ -78,7 +78,7 @@ class App extends React.Component {
           <Grid item style={{marginLeft: "7%"}}>
           <Button href="/#home" class="text">
           <Typography variant="h1" class="text" style={{color: "white", 
-            textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000"}}>
+            textShadow: "-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000"}}>
             David Beggs
           </Typography>
           </Button>
@@ -110,11 +110,10 @@ class App extends React.Component {
 
         </Grid>
 
+        </AppBar>
         <Fade in={this.state.showSmall}>
             <VerticalMenu fade={this.state.showSmall}/>
         </Fade>
-
-        </AppBar>
 
         <Grid item style={{marginTop: "12%"}}>
 

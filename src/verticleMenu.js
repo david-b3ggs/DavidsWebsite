@@ -10,7 +10,7 @@ import CallIcon from '@material-ui/icons/Call';
 export default function VerticalMenu(props){
 
     return (
-        <div>
+        <div style={{marginLeft: "0", marginTop: "0", position: "fixed", left: "0"}}>
             <Grid direction="column" justify="flex-start" alignItems="flex-start">
 
             <Grid item>
