@@ -14,8 +14,9 @@ import PersonIcon from '@material-ui/icons/Person';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import VizSensor from 'react-visibility-sensor';
 import './App.css';
-import VerticalMenu from './verticleMenu';
+import VerticalMenu from './components/verticleMenu';
 import pdf from './Doc/DavidBeggs_Resume.pdf';
+import WorkExperience from './components/workExp';
 
 const useStylesBootstrap = makeStyles(theme => ({
   arrow: {
@@ -100,22 +101,21 @@ class App extends React.Component {
               </Grid>
 
               <Grid item style={{ float: "right", margin: "0 auto", position: "absolute", right: "7%" }}>
-                  <Button variant="contained" href={pdf} target="_blank">
-                    Resume
+                <Button variant="contained" href={pdf} target="_blank">
+                  Resume
                   <DescriptionIcon />
-                  </Button>
+                </Button>
               </Grid>
 
               <Fade in={this.state.imgViz}>
                 <Typography variant="h1" style={{ position: "fixed", margin: "0 0", top: "3%", left: "45%" }} class="text"> Welcome! </Typography>
               </Fade>
-
             </Grid>
 
           </AppBar>
-          <Fade in={this.state.showSmall}>
-            <VerticalMenu fade={this.state.showSmall} />
-          </Fade>
+
+          <VerticalMenu fade={this.state.showSmall} />
+
 
           <Grid item style={{ marginTop: "12%" }}>
 
@@ -196,7 +196,7 @@ class App extends React.Component {
             </Typography>
             </Grid>
           </Grid>
-          <Grid style={{ top: "0" }} container direction="row" justify="center" alignItems="center" spacing={3}>
+          <Grid style={{ top: "0" }} container direction="row" justify="space-evenly" alignItems="center" spacing={3}>
             <Grid item style={{ top: "0" }}>
               <Box class="box" style={{ color: "#154734", backgroundImage: "url(\"https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg\")", backgroundSize: "cover" }}>
               </Box>
@@ -220,13 +220,14 @@ class App extends React.Component {
           </Grid>
         </Paper>
 
-        <Paper id="work" style={{ marginTop: "10vh", marginLeft: "12%", width: "75vw", height: "75vh" }}>
-          <Grid container direction="row" justify="center" alignItems="center">
+        <Paper id="work" style={{ marginTop: "10vh", marginLeft: "12vw", width: "75vw", height: "auto", minHeight: "80vh"}}>
+          <Grid container direction="column" justify="center" alignItems="center" spacing={6}>
+            <Grid item >
+              <Typography variant="h1" class="text" style={{ fontSize: "60px", top: "0",
+            textDecorationLine: "underline"}} >Work Experience</Typography>
+            </Grid>
             <Grid item>
-              <Typography variant="h1" class="text" style={{ fontSize: "50px" }}>
-                Work Experience
-            </Typography>
-
+              <WorkExperience />
             </Grid>
           </Grid>
         </Paper>
