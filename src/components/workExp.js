@@ -33,7 +33,7 @@ export default function WorkExperience(props) {
                 <Grid item>
                 <Card class="box" style={{
                         backgroundColor: "#222222", width: "55vw", backgroundImage: "url(https://talkbusiness.net/wp-content/uploads/2019/08/IR_JBHuntBuildingOpens_8-19-19-732x384.jpg)",
-                        height: "45vh", marginLeft: "auto", marginBottom: "auto"
+                        height: "45vh", marginLeft: "auto", marginBottom: "10%"
                     }} raised="true">
                         <CardContent>
                             <Button href="https://www.jbhunt.com/" target="_blank" style={{ float: "left" }}>

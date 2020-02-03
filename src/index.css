@@ -5,7 +5,7 @@ body {
   background-color: #2e2e2e;
   overflow-y: auto;
   overflow-x: hidden;
-  background-image: url("\\background.jpg");
+  background-image: url("\\assets\\background.jpg");
   background-position: top;
   background-size: contain;
  background-attachment: scroll;
