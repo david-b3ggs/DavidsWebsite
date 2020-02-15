@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"cognito71eb77ba": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"davidwebsite": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

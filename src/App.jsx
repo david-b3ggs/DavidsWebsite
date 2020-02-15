@@ -13,6 +13,7 @@ import './App.css';
 import VerticalMenu from './components/verticleMenu';
 import WorkExperience from './components/workExp';
 import MainAppBar from './components/appBar';
+import Education from './components/educationSection';
 
 const useStylesBootstrap = makeStyles(theme => ({
   arrow: {
@@ -71,9 +72,7 @@ class App extends React.Component {
         <Grid container direction="column" justify="center" alignItems="center">
 
           <MainAppBar fade={this.state.imgViz} />
-
           <VerticalMenu fade={this.state.showSmall} />
-
 
           <Grid item style={{ marginTop: "12%" }}>
 
@@ -103,7 +102,7 @@ class App extends React.Component {
                 <Typography class="text" color="inherit" variant="h2">Education</Typography>
               </React.Fragment>
             } placement="top">
-              <IconButton style={{ margin: "auto", marginTop: "10%" }} >
+              <IconButton style={{ margin: "auto", marginTop: "10%" }} href="/#education">
                 <SchoolIcon style={{ height: "220px", width: "220px", color: "white" }} />
               </IconButton>
             </HtmlTooltip>
@@ -196,8 +195,18 @@ class App extends React.Component {
         </Box>
 
         <Box display="flex">
-          <Paper >
-
+          <Paper id="education" style={{ marginTop: "10vh", marginLeft: "12vw", width: "75vw", height: "auto", minHeight: "90vh" }}>
+            <Grid container direction="column" justify="center" alignItems="center" spacing={1}>
+              <Grid item >
+                <Typography variant="h1" class="text" style={{
+                  fontSize: "60px", top: "0",
+                  textDecorationLine: "underline"
+                }} >Education</Typography>
+              </Grid>
+              <Grid item>
+                <Education />
+              </Grid>
+            </Grid>
           </Paper>
         </Box>
       </div>);

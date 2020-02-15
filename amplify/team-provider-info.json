@@ -1,0 +1,20 @@
+{
+    "main": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-davidwebsite-main-224746-authRole",
+            "UnauthRoleArn": "arn:aws:iam::255991084103:role/amplify-davidwebsite-main-224746-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::255991084103:role/amplify-davidwebsite-main-224746-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-davidwebsite-main-224746-deployment",
+            "UnauthRoleName": "amplify-davidwebsite-main-224746-unauthRole",
+            "StackName": "amplify-davidwebsite-main-224746",
+            "StackId": "arn:aws:cloudformation:us-east-1:255991084103:stack/amplify-davidwebsite-main-224746/d3aca820-489b-11ea-ade5-0e8a1126433d",
+            "AmplifyAppId": "d2d84iqjm2k6wh"
+        },
+        "categories": {
+            "auth": {
+                "cognito71eb77ba": {}
+            }
+        }
+    }
+}

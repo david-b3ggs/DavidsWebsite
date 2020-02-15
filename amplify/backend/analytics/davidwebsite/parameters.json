@@ -1,0 +1,20 @@
+{
+    "appName": "davidwebsite",
+    "roleName": "pinpointLambdaRole246f027e",
+    "cloudWatchPolicyName": "cloudWatchPolicy246f027e",
+    "pinpointPolicyName": "pinpointPolicy246f027e",
+    "authPolicyName": "pinpoint_amplify_246f027e",
+    "unauthPolicyName": "pinpoint_amplify_246f027e",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

@@ -31,7 +31,7 @@ export default function VerticalMenu(props){
 
           <Grid item>
             <Fade in={props.fade}>
-                <IconButton size="medium" href="/#first" style={{margin: "0 0"}}>
+                <IconButton size="medium" href="/#education" style={{margin: "0 0"}}>
                     <SchoolIcon style={{color: "white", height: "50px", width: "50px"}}/>
                 </IconButton>
             </Fade>
